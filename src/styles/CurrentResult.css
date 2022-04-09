@@ -1,0 +1,35 @@
+.currentResult {
+  width: 80%;
+  margin: 5% auto -5%;
+  padding: 2% 3%;
+  display: flex;
+  flex-direction: column;
+  background-color: #5ccbce;
+}
+
+.currentResult h3 {
+  font-size: 30px;
+}
+
+.currentResult p {
+  font-size: 22px;
+}
+
+@media (max-width: 768px) {
+  .currentResult {
+    width: 95%;
+    margin: 10% auto -5%;
+  }
+
+  .currentResult > * {
+    margin-bottom: 1%;
+  }
+
+  .currentResult h3 {
+    font-size: 26px;
+  }
+
+  .currentResult p {
+    font-size: 20px;
+  }
+}

@@ -1,0 +1,27 @@
+.historyResultComponent {
+  width: 60%;
+  margin: 0 auto 2%;
+  padding: 2%;
+  background-color: #5ccbce;
+  list-style: none;
+}
+
+.historyResultComponent > * {
+  margin-bottom: 1%;
+}
+.historyResultComponent .city {
+  margin-bottom: 1%;
+  font-size: 26px;
+  text-align: left;
+}
+
+@media (max-width: 768px) {
+  .historyResultComponent {
+    width: 70%;
+    margin: 0 auto 5%;
+  }
+
+  .historyResultComponent .city {
+    font-size: 24px;
+  }
+}
