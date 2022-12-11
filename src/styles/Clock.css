@@ -1,0 +1,22 @@
+.clock {
+  position: absolute;
+  bottom: 124px;
+  left: 0;
+  font-size: 26px;
+  font-weight: bold;
+  text-align: center;
+  color: white;
+}
+
+/* LIGHT MODE */
+
+#light .clock {
+  text-shadow: 0 0 5px #000;
+}
+
+@media (max-width: 1024px) {
+  .clock {
+    font-size: 22px;
+    bottom: 93px;
+  }
+}

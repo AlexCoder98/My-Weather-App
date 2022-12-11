@@ -1,20 +1,23 @@
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
-
 import "../styles/Search.css";
-
-const searchIcon = <FontAwesomeIcon icon={faMagnifyingGlass} />;
 
 const Search = ({ inputValue, handleInputValue, onClick }) => {
   return (
-    <div className="search">
+    <div className="col-lg-8 mx-auto d-flex justify-content-center mt-5">
       <input
         type="text"
+        className="input-search-city form-control p-2"
+        style={{ fontSize: "20px" }}
         value={inputValue}
         onChange={handleInputValue}
-        placeholder="Search city"
+        placeholder="City"
       />
-      <button onClick={onClick}>Search {searchIcon}</button>
+      <button
+        className="btn btn-search btn-primary"
+        style={{ fontSize: "24px" }}
+        onClick={onClick}
+      >
+        Search
+      </button>
     </div>
   );
 };

@@ -1,47 +1,112 @@
-@import url("https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;600&display=swap");
 
 * {
-  margin: 0;
-  padding: 0;
+  margin: 0 !important;
+  padding: 0 !important;
   box-sizing: border-box;
-  font-family: "Work Sans", arial, sans-serif;
+  font-family: "Baloo 2", arial, sans-serif;
 }
 
-.weather_app {
-  width: 80%;
-  margin: 10% auto 0;
+.bg-sky {
+  height: 50vh;
 }
 
-.weather_app h1 {
-  position: relative;
-  margin: 0 auto;
-  padding: 25px;
-  width: 400px;
-  font-size: 36px;
-  text-align: center;
+.bg-sky h1 {
+  font-size: 46px;
 }
 
-.weather_app h1 > * {
-  position: absolute;
+/* LIGHT MODE STYLES */
+
+#light {
+  background-color: #fff;
 }
 
-.weather_app h1 .cloud {
-  top: 24px;
-  right: 28px;
-  font-size: 32px;
-  z-index: 2;
+#light .bg-sky {
+  background-image: url(./Mountain-sky.jpg) !important;
+}
+
+#light .bg-sky h1 {
+  text-shadow: 0 0 5px #000;
+}
+
+.sun {
+  top: -15px;
+  right: -46px;
+  color: rgb(255, 225, 0);
+}
+
+.sun svg {
+  filter: drop-shadow(0 0 20px rgb(255, 225, 0));
+  animation: sun 8s linear infinite both;
+}
+
+.cloud {
+  top: -7px;
+  right: -71px;
   color: lightblue;
-  animation: cloud 3s ease-out both infinite;
 }
 
-.weather_app h1 .sun {
-  top: 15px;
-  right: 49px;
-  font-size: 28px;
-  color: #e8f406;
-  animation: sun 10s linear infinite both;
-  z-index: 1;
+.cloud svg {
+  filter: drop-shadow(3px 3px 5px black);
+  animation: cloud 5s ease-in-out infinite both;
 }
+
+/* DARK MODE STYLES */
+#dark {
+  background-color: rgb(231, 231, 231);
+}
+
+#dark .bg-sky {
+  background-image: url(./Star-sky.jpg) !important;
+}
+
+.moon {
+  top: -10px;
+  right: -42px;
+  transform-origin: top;
+  color: rgb(234, 239, 255);
+}
+
+.moon svg {
+  filter: drop-shadow(0 0 12px rgb(234, 239, 255));
+  animation: moon 5s linear both infinite;
+}
+
+.stars {
+  position: relative;
+  width: 50px;
+  height: 40px;
+  display: inline-block;
+  font-size: 10px;
+  top: 0;
+  right: -74px;
+}
+
+.stars > * {
+  position: absolute;
+  color: #fffa86;
+}
+
+.stars > * svg {
+  animation: star 12s ease-out both infinite;
+}
+
+.stars .star-1 {
+  top: 0;
+  left: 18px;
+  font-size: 20px;
+}
+.stars .star-2 {
+  top: -10px;
+  left: 36px;
+  font-size: 14px;
+}
+.stars .star-3 {
+  top: -3px;
+  left: 10px;
+}
+
+/* ANIMATIONS */
 
 @keyframes sun {
   0% {
@@ -66,8 +131,51 @@
   }
 }
 
+@keyframes moon {
+  0% {
+    transform: rotate(0);
+  }
+
+  35% {
+    transform: rotate(5deg);
+  }
+
+  70% {
+    transform: rotate(-5deg);
+  }
+
+  100% {
+    transform: rotate(0);
+  }
+}
+
+@keyframes star {
+  0% {
+    filter: drop-shadow(0 0 3px #fff);
+  }
+  20% {
+    filter: drop-shadow(0 0 10px #fff);
+  }
+  80% {
+    filter: drop-shadow(0 0 10px #fff);
+  }
+  100% {
+    filter: drop-shadow(0 0 3px #fff);
+  }
+}
+
 @media (max-width: 1024px) {
-  .weather_app {
-    width: 100%;
+  .bg-sky {
+    height: 40vh;
+  }
+
+  .bg-sky h1 {
+    font-size: 42px;
+  }
+}
+
+@media (max-width: 768px) {
+  .bg-sky h1 {
+    font-size: 38px;
   }
 }
